@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="hero">
+    <h1>Welcome to PandutaXP</h1>
+    <div class="cta-buttons">
+        <div class="client-buttons">
+            <a href="{% url 'client_signup' %}" class="btn">Client Sign Up</a>
+            <a href="{% url 'login' %}" class="btn">Client Sign In</a>
+        </div>
+        <div class="provider-buttons">
+            <a href="{% url 'provider_signup' %}" class="btn">Provider Sign Up</a>
+            <a href="{% url 'login' %}" class="btn">Provider Sign In</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
