@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="booking-container">
+    <div class="service-selector card-2025">
+        <h2 class="neon-text">Select Your Service</h2>
+        
+        <div class="service-options">
+            <div class="service-option active">
+                <div class="hologram-icon">👕</div>
+                <h3>Regular Wash</h3>
+                <p>$15/kg</p>
+            </div>
+            
+            <div class="service-option">
+                <div class="hologram-icon">✨</div>
+                <h3>Premium Care</h3>
+                <p>$25/kg</p>
+            </div>
+            
+            <div class="service-option">
+                <div class="hologram-icon">⚡</div>
+                <h3>Express 3h</h3>
+                <p>$30/kg</p>
+            </div>
+        </div>
+
+        <div class="time-picker card-2025">
+            <h3>Select Pickup Time</h3>
+            <input type="datetime-local" class="future-input">
+        </div>
+
+        <button class="book-button">Book Now</button>
+    </div>
+</div>

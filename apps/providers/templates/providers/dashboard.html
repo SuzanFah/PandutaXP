@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h1>{{ title }}</h1>
+    <div class="orders-list">
+        {% for order in orders %}
+            <div class="order-card">{{ order }}</div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

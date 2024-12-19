@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="order-management">
+    <div class="orders-header">
+        <h1 class="neon-text">Active Orders Hub</h1>
+        <div class="filter-controls">
+            <button class="filter-btn active">All Orders</button>
+            <button class="filter-btn">New</button>
+            <button class="filter-btn">In Progress</button>
+            <button class="filter-btn">Ready</button>
+        </div>
+    </div>
+
+    <div class="orders-grid">
+        <div class="order-card card-2025">
+            <div class="order-status new">New Order</div>
+            <h3>#XP2025-90</h3>
+            <div class="order-info">
+                <span>📍 2.5 km away</span>
+                <span>⚖️ 3.2 kg</span>
+                <span>💫 Premium Care</span>
+            </div>
+            <div class="action-buttons">
+                <button class="accept-btn">Accept</button>
+                <button class="decline-btn">Decline</button>
+            </div>
+        </div>
+
+        <div class="order-card card-2025">
+            <div class="order-status progress">In Progress</div>
+            <h3>#XP2025-89</h3>
+            <div class="order-info">
+                <span>⏱️ 45 mins remaining</span>
+                <span>⚖️ 4.5 kg</span>
+                <span>🚀 Express Service</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 65%"></div>
+            </div>
+        </div>
+    </div>
+</div>
