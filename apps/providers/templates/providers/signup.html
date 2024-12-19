@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="hero">
+    <h1>Grow Your Laundry Business</h1>
+    <div class="signup-form">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Business Name</label>
+                {{ form.username }}
+            </div>
+            <div class="form-group">
+                <label for="email">Business Email</label>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                <label for="password1">Password</label>
+                {{ form.password1 }}
+            </div>
+            <div class="form-group">
+                <label for="password2">Confirm Password</label>
+                {{ form.password2 }}
+            </div>
+            <button type="submit" class="btn">Join as Provider</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
