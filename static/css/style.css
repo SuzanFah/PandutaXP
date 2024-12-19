@@ -36,3 +36,65 @@
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0,0,0,0.2);
 }
+ .signup-form {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.signup-form input {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    color: #6b46c1;
+    font-size: 16px;
+    text-align: center;
+}
+
+.signup-form label {
+    display: block;
+    color: white;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.signup-form button {
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    font-size: 18px;
+}
+
+.provider-benefits {
+    color: white;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    line-height: 2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+      display: block;
+      color: white;
+      margin-top: 1rem;
+      font-weight: bold;
+  }
+
+  .signup-form button {
+      margin-top: 2rem;
+      padding: 1rem 3rem;
+      font-size: 18px;
+  }
+
+  .provider-benefits {
+      color: white;
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      line-height: 2;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  }
