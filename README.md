@@ -49,3 +49,4 @@ PandutaXP stands out with its trendy, user-friendly design 🎨, efficient dual-
 1. Clone the repository:  
    ```bash
    git clone https://github.com/SuzanFah/PandutaXP.git
+
