@@ -3,7 +3,12 @@
 
 {% block content %}
 <div class="hero">
-    <h1>Welcome to PandutaXP</h1>
+    <div class="welcome-text">
+        <h1>Welcome to PandutaXP</h1>
+    </div>
+    <div class="logo">
+        <img src="{% static 'images/panduta-logo (2).png' %}" alt="PandutaXP Logo" class="logo-image">
+    </div>
     <div class="cta-buttons">
         <div class="client-buttons">
             <a href="{% url 'client_signup' %}" class="btn">Client Sign Up</a>
@@ -13,6 +18,22 @@
             <a href="{% url 'provider_signup' %}" class="btn">Provider Sign Up</a>
             <a href="{% url 'login' %}" class="btn">Provider Sign In</a>
         </div>
+        <div class="washing-machine">
+            <svg viewBox="0 0 100 100">
+                <rect x="10" y="10" width="80" height="80" rx="5" class="machine-body"/>
+                <circle cx="50" cy="50" r="32" class="door-rim"/>
+                <circle cx="50" cy="50" r="30" class="door-frame"/>
+                <circle cx="50" cy="50" r="25" class="machine-door"/>
+                <circle cx="45" cy="45" r="2" class="bubble"/>
+                <circle cx="55" cy="48" r="3" class="bubble"/>
+                <circle cx="52" cy="55" r="2" class="bubble"/>
+                <rect x="15" y="15" width="25" height="8" rx="2" class="display"/>
+                <circle cx="75" cy="20" r="5" class="knob"/>
+                <path class="water-wave1" d="M35,50 Q50,65 65,50"/>
+                <path class="water-wave2" d="M35,45 Q50,60 65,45"/>
+            </svg>
+        </div>
     </div>
 </div>
 {% endblock %}
+
