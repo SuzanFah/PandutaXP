@@ -1,0 +1,310 @@
+:root {
+    --primary-purple: #8A2BE2;
+    --neon-purple: #B14EFF;
+    --lavender-mist: #E6E6FA;
+    --cyber-violet: #9945FF;
+    --future-white: #F8F7FF;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, var(--primary-purple), var(--cyber-violet));
+    min-height: 100vh;
+}
+
+.nav-2025 {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--neon-purple);
+}
+
+/* Modern card design with purple accents */
+.card-2025 {
+    background: var(--future-white);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(138, 43, 226, 0.15);
+    border: 1px solid rgba(177, 78, 255, 0.2);
+}
+
+/* Adding to our existing CSS */
+.dashboard-container {
+    padding: 2rem;
+}
+
+.welcome-banner {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.neon-text {
+    color: var(--future-white);
+    text-shadow: 0 0 10px var(--neon-purple);
+    font-size: 3rem;
+}
+
+.cyber-subtitle {
+    color: var(--lavender-mist);
+    font-size: 1.5rem;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Adding provider dashboard styles */
+.provider-dashboard {
+    padding: 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    color: var(--cyber-violet);
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.trend {
+    font-size: 1.2rem;
+}
+
+.trend.up {
+    color: #50E3C2;
+}
+
+.trend.stable {
+    color: var(--neon-purple);
+}
+
+.active-orders {
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+/* Adding booking interface styles */
+.booking-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.service-selector {
+    padding: 2rem;
+}
+
+.service-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.service-option {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-option:hover {
+    background: rgba(154, 69, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.service-option.active {
+    background: var(--cyber-violet);
+    color: var(--future-white);
+}
+
+.hologram-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.book-button {
+    background: var(--neon-purple);
+    color: var(--future-white);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+}
+
+.book-button:hover {
+    background: var(--cyber-violet);
+    box-shadow: 0 0 20px rgba(154, 69, 255, 0.5);
+}
+
+/* Adding tracking interface styles */
+.tracking-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.track-card {
+    padding: 2rem;
+}
+
+.status-timeline {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem 0;
+    position: relative;
+}
+
+.status-timeline::before {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--neon-purple);
+    z-index: 0;
+}
+
+.timeline-point {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    flex: 1;
+}
+
+.point-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--future-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin: 0 auto 1rem;
+    border: 2px solid var(--neon-purple);
+}
+
+.timeline-point.active .point-icon {
+    background: var(--cyber-violet);
+    color: var(--future-white);
+}
+
+.timeline-point.pulse .point-icon {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(154, 69, 255, 0.4); }
+    70% { box-shadow: 0 0 0 20px rgba(154, 69, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(154, 69, 255, 0); }
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Adding order management styles */
+.order-management {
+    padding: 2rem;
+}
+
+.orders-header {
+    margin-bottom: 2rem;
+}
+
+.filter-controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    color: var(--future-white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background: var(--cyber-violet);
+    box-shadow: 0 0 15px rgba(154, 69, 255, 0.5);
+}
+
+.orders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.order-card {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.order-status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.order-status.new {
+    background: rgba(80, 227, 194, 0.2);
+    color: #50E3C2;
+}
+
+.order-status.progress {
+    background: rgba(154, 69, 255, 0.2);
+    color: var(--neon-purple);
+}
+
+.progress-bar {
+    height: 8px;
+    background: rgba(154, 69, 255, 0.2);
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--neon-purple);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
