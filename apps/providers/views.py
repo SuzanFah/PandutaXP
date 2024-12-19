@@ -10,3 +10,16 @@ def provider_dashboard(request):
 
 def manage_orders(request):
     return render(request, 'providers/manage_orders.html')
+
+from django.shortcuts import render, redirect
+from .forms import ProviderSignUpForm
+
+def provider_signup(request):
+    if request.method == 'POST':
+        form = ProviderSignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            return redirect('login')
+    else:
+        form = ProviderSignUpForm()
+    return render(request, 'providers/signup.html', {'form': form})
