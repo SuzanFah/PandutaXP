@@ -114,3 +114,7 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+
+LOGIN_REDIRECT_URL = 'client_dashboard'  # For clients
+# or
+LOGIN_REDIRECT_URL = 'provider_dashboard'  # For providers
