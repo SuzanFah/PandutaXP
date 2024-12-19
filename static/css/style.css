@@ -1,3 +1,38 @@
+.logo-text {
+    fill: white;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+
+}
+.logo-text, .logo-xp {
+    font-family: 'Black Ops One', cursive;
+    font-size: 32px;
+}
+
+.welcome-text {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-family: 'Black Ops One', cursive;
+    font-size: 2.5rem;
+    text-shadow: 0 0 15px rgba(107, 70, 193, 0.6);
+    z-index: 2;
+}
+
+.logo-image {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;  /* Doubled the size for more impact */
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(107, 70, 193, 0.4)); /* Enhanced shadow for larger size */
+    z-index: 2;
+}
+
 .hero {
     background: linear-gradient(135deg, #6b46c1 0%, #9f7aea 100%);
     color: white;
@@ -98,3 +133,178 @@
       line-height: 2;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
   }
+
+.washing-machine {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    width: 200px;
+    height: 200px;
+    animation: wash 3s infinite ease-in-out;
+}
+
+.machine-door {
+    fill: #ffffff;
+    stroke: #6b46c1;
+    stroke-width: 2;
+    animation: spin 2s infinite linear;
+    transform-origin: center;
+}
+
+@keyframes wash {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.washing-machine {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-radius: 10px;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+}
+
+.machine-door {
+    fill: rgba(107, 70, 193, 0.1);
+    stroke: #6b46c1;
+    stroke-width: 3;
+    filter: drop-shadow(0 0 5px rgba(107, 70, 193, 0.3));
+}
+
+.clothes {
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: flow 2s infinite;
+}
+
+@keyframes flow {
+    to {
+        stroke-dashoffset: -50;
+    }
+}
+
+.machine-body {
+    fill: #ffffff;
+    stroke: #6b46c1;
+    stroke-width: 2;
+}
+
+.door-frame {
+    fill: none;
+    stroke: #6b46c1;
+    stroke-width: 3;
+}
+
+.control-panel {
+    fill: #6b46c1;
+    opacity: 0.8;
+}
+
+.water-flow {
+    stroke: #9f7aea;
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 15;
+    animation: flow 1s linear infinite;
+}
+
+.door-rim {
+    fill: none;
+    stroke: linear-gradient(145deg, #6b46c1, #9f7aea);
+    stroke-width: 2;
+    filter: drop-shadow(0 0 3px rgba(107, 70, 193, 0.5));
+}
+
+.bubble {
+    fill: rgba(255, 255, 255, 0.8);
+    animation: float 2s infinite ease-in-out;
+}
+
+.display {
+    fill: #2d3748;
+    animation: blink 1.5s infinite;
+}
+
+.knob {
+    fill: #6b46c1;
+    stroke: #ffffff;
+    stroke-width: 1;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.water-wave1, .water-wave2 {
+    stroke: rgba(159, 122, 234, 0.6);
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 15;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.water-wave1 {
+    animation: flow 2s linear infinite;
+}
+
+.water-wave2 {
+    animation: flow 2s linear infinite reverse;
+}
+
+.laundry-items {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1.5;
+    stroke-dasharray: 10;
+    animation: swish 3s infinite ease-in-out;
+}
+
+.steam {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.washing-machine:hover .steam {
+    opacity: 0.8;
+    animation: rise 2s infinite;
+}
+
+.power-button {
+    fill: #6b46c1;
+    filter: drop-shadow(0 0 5px rgba(107, 70, 193, 0.8));
+    cursor: pointer;
+}
+
+.steam path {
+    stroke: rgba(255, 255, 255, 0.6);
+    stroke-width: 1;
+    fill: none;
+    opacity: 0;
+}
+
+.washing-machine:hover .steam path {
+    opacity: 0.4;
+    animation: drift 3s infinite ease-in-out;
+}
+
+@keyframes drift {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
