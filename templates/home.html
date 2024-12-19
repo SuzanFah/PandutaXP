@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="hero-section">
+    <h1>Welcome to PandutaXP</h1>
+    <p>Revolutionizing Laundry Services</p>
+    <div class="cta-buttons">
+        <a href="{% url 'clients:dashboard' %}" class="btn btn-primary">Find Laundry Services</a>
+        <a href="{% url 'providers:dashboard' %}" class="btn btn-secondary">Become a Provider</a>
+    </div>
+</div>
+{% endblock %}

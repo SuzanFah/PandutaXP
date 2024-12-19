@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="landing-hero">
+    <h1 class="neon-text">Welcome to PandutaXP</h1>
+    <h2>Your Modern Laundry Solution</h2>
+    
+    <div class="hero-buttons">
+        <a href="{% url 'clients:dashboard' %}" class="hero-btn client-btn">I Need Laundry Service</a>
+        <a href="{% url 'providers:dashboard' %}" class="hero-btn provider-btn">I'm a Service Provider</a>
+    </div>
+</div>
+{% endblock %}
