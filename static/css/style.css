@@ -114,6 +114,7 @@
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
+.display {
       display: block;
       color: white;
       margin-top: 1rem;
@@ -307,4 +308,140 @@
     0% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
+}
+
+/* Auth Container - Creates full-height gradient background container */
+.auth-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6b46c1 0%, #9f7aea 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Auth Box - Glass-like container for the form */
+.auth-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+}
+
+/* Header styling for the auth form */
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Main heading style */
+.auth-header h2 {
+    color: #6b46c1;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Form group - Wrapper for form elements */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Input field styling */
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+/* Input field focus state */
+.form-control:focus {
+    border-color: #6b46c1;
+    box-shadow: 0 0 0 3px rgba(107, 70, 193, 0.2);
+    outline: none;
+}
+
+/* Submit button styling */
+.auth-button {
+    width: 100%;
+    padding: 12px;
+    background: #6b46c1;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* Button hover animation */
+.auth-button:hover {
+    transform: translateY(-2px);
+    background: #553c9a;
+}
+
+/* Links container below the form */
+.auth-links {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+/* Individual link styling */
+.auth-links a {
+    color: #6b46c1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Link hover effect */
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+/* Login Page Specific Styles For Both Clients And Providers */
+.login-container {
+    background: linear-gradient(135deg, #6b46c1 0%, #9f7aea 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-header h2 {
+    color: #6b46c1;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Animation for the login box */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
