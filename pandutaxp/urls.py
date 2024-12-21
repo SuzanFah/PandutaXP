@@ -1,14 +1,14 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
-from apps.core import views
+from apps.core import views as core_views
 from apps.clients.views import client_signup, client_dashboard
 from apps.providers.views import provider_signup, provider_dashboard
-
+from accounts import views as account_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
+    path('', core_views.home, name='home'),
     path('clients/', include('apps.clients.urls')),
     path('providers/', include('apps.providers.urls')),
     path('clients/signup/', client_signup, name='client_signup'),
@@ -22,4 +22,5 @@ urlpatterns = [
     path('accounts/password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     path('accounts/reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('accounts/reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
+    path('register/', account_views.register_view, name='register'),
 ]
