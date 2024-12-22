@@ -27,3 +27,9 @@ class ClientDashboardTest(TestCase):
         self.test_client.login(username='testclient', password='testpass123')
         response = self.test_client.get(reverse('client_dashboard'))
         self.assertContains(response, 'testclient')
+
+# Add more functionality tests
+def test_order_creation(self):
+    # Implement order placement
+    # Add service selection
+    # Implement pricing calculation
