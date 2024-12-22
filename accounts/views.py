@@ -1,23 +1,22 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
-from apps.clients.models import Client
-from apps.providers.models import Provider
-
+from django.contrib.auth import login
+from .forms import CustomRegistrationForm
 def register_view(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomRegistrationForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('login')
+            user = form.save()
+            login(request, user)
+            return redirect('home')
     else:
-        form = UserCreationForm()
+        form = CustomRegistrationForm()
     return render(request, 'registration/register.html', {'form': form})
-
-def login_success(request):
-    if request.user.is_authenticated:
-        if Client.objects.filter(user=request.user).exists():
-            return redirect('client_dashboard')
-        elif Provider.objects.filter(user=request.user).exists():
-            return redirect('provider_dashboard')
+@login_required
+def dashboard_view(request):
+    if hasattr(request.user, 'client'):
+        return redirect('client_dashboard')
+    elif hasattr(request.user, 'provider'):
+        return redirect('provider_dashboard')
    
          
