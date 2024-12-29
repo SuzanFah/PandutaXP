@@ -595,3 +595,71 @@
     padding: 0.8rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* Rich Provider Purple Dashboard */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body .dashboard-wrapper {
+    background: linear-gradient(135deg, #6f42c1, #8854d0) !important;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 2rem;
+    color: rgb(142, 42, 42);
+    display: block;
+}
+.dashboard-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+h1, .welcome-text {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-actions {
+    margin-top: 2rem;
+}
+
+.dashboard-actions h3 {
+    color: white;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+.dashboard-actions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dashboard-actions li {
+    margin-bottom: 1rem;
+}
+
+.dashboard-actions a {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: white;
+    padding: 1rem 1.5rem;
+    margin: 0.5rem 0;
+    display: block;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dashboard-actions a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+
