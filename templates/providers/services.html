@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="services-container">
+    <h2>Manage Services</h2>
+    <a href="{% url 'providers:add_service' %}" class="btn btn-primary">Add New Service</a>
+    
+    <div class="service-list">
+        {% for service in services %}
+        <div class="service-card">
+            <h3>{{ service.name }}</h3>
+            <p>{{ service.description }}</p>
+            <p class="price">${{ service.price }}</p>
+            <p>Duration: {{ service.duration }} minutes</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

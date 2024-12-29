@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Book a Service</h2>
+    
+    <div class="service-selection">
+        {% for service in services %}
+        <div class="service-card">
+            <h3>{{ service.name }}</h3>
+            <p>{{ service.description }}</p>
+            <p class="price">${{ service.price }}</p>
+            <p>Provider: {{ service.provider.user.username }}</p>
+            <p>Duration: {{ service.duration }} minutes</p>
+            
+            <form method="post" action="{% url 'clients:create_order' service.id %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="scheduled_for">Select Date and Time:</label>
+                    <input type="datetime-local" name="scheduled_for" required>
+                </div>
+                <button type="submit" class="btn btn-book">Book Now</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

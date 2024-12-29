@@ -1,29 +1,54 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="dashboard-container">
-    <div class="welcome-banner">
-        <h1 class="neon-text">Welcome to PandutaXP</h1>
-        <p class="cyber-subtitle">Your Smart Laundry Experience</p>
+<div class="client-dashboard">
+    <h2>Welcome, {{ client.user.username }}!</h2>
+    
+    <!-- Search Filters -->
+    <div class="search-filters">
+        <form method="GET" class="filter-form">
+            <div class="filter-group">
+                <input type="text" name="location" placeholder="Search by location">
+                <select name="fabric">
+                    <option value="">Select Fabric Type</option>
+                    <option value="cotton">Cotton</option>
+                    <option value="silk">Silk</option>
+                    <option value="wool">Wool</option>
+                    <option value="delicate">Delicate</option>
+                </select>
+                <select name="price">
+                    <option value="">Price Range</option>
+                    <option value="low">$0-$20</option>
+                    <option value="medium">$21-$50</option>
+                    <option value="high">$51+</option>
+                </select>
+                <button type="submit">Search</button>
+            </div>
+        </form>
     </div>
 
-    <div class="service-grid">
-        <div class="card-2025">
-            <div class="service-icon">🌟</div>
-            <h3>Quick Wash</h3>
-            <p>3-Hour Express Service</p>
+    <!-- Providers List -->
+    <div class="providers-list">
+        {% for provider in providers %}
+        <div class="provider-card">
+            <h3>{{ provider.user.username }}</h3>
+            <p>Location: {{ provider.address }}</p>
+            <p>Services: {{ provider.service_type }}</p>
+            <button onclick="location.href='{% url 'clients_book_service' provider.id %}'">Book Now</button>
         </div>
-        
-        <div class="card-2025">
-            <div class="service-icon">👔</div>
-            <h3>Premium Care</h3>
-            <p>Luxury Garment Treatment</p>
-        </div>
+        {% endfor %}
+    </div>
 
-        <div class="card-2025">
-            <div class="service-icon">🚀</div>
-            <h3>Smart Delivery</h3>
-            <p>Track in Real-time</p>
+    <!-- Active Orders -->
+    <div class="active-orders">
+        <h3>My Orders</h3>
+        {% for order in active_orders %}
+        <div class="order-card">
+            <p>Order #{{ order.id }}</p>
+            <p>Status: {{ order.status }}</p>
+            <p>Provider: {{ order.provider.user.username }}</p>
         </div>
+        {% endfor %}
     </div>
 </div>
+{% endblock %}
