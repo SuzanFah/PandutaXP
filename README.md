@@ -50,3 +50,17 @@ PandutaXP stands out with its trendy, user-friendly design 🎨, efficient dual-
    ```bash
    git clone https://github.com/SuzanFah/PandutaXP.git
 
+
+## API Documentation
+- POST /api/orders/update-status/
+- POST /api/orders/create/
+- GET /orders/{order_id}
+
+## Setup Instructions
+1. Environment Setup
+2. Database Configuration
+3. Running Development Server
+4. Testing Guide
+
+## Architecture
+[Include system architecture diagram]

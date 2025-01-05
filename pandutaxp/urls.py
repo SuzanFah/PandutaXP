@@ -15,7 +15,7 @@ urlpatterns = [
     path('clients/', include('apps.clients.urls')),
     path('clients/dashboard/', client_dashboard, name='clients_dashboard'),
     # Provider URLs
-    path('providers/', include('apps.providers.urls')),
+    path('providers/', include('apps.providers.urls', namespace='providers')),
     path('providers/dashboard/', provider_dashboard, name='providers_dashboard'),
     path('providers/signup/', provider_signup, name='provider_signup'),
 
