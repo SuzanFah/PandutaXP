@@ -1,0 +1,96 @@
+/* Force Ultra Modern Purple Theme 2024 */
+.dashboard-container {
+    background: linear-gradient(135deg, #4A148C, #7B1FA2, #9C27B0) !important;
+}
+
+.dashboard-main {
+    background: rgba(156, 39, 176, 0.1) !important;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(156, 39, 176, 0.3);
+}
+
+.recent-orders {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+}
+
+.dashboard-sidebar {
+    background: rgba(74, 20, 140, 0.9) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav a:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: translateX(10px);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #9C27B0, #E040FB) !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(156, 39, 176, 0.4);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #E040FB, #9C27B0) !important;
+    transform: translateY(-2px);
+}
+
+.stat-icon {
+    background: linear-gradient(45deg, #9C27B0, #E040FB) !important;
+}
+
+table {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+}
+
+th {
+    color: #E1BEE7 !important;
+    font-weight: 600;
+}
+
+td {
+    color: white !important;
+}
+
+.status {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-view {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-view:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-2px);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.stat-card {
+    animation: float 6s ease-in-out infinite;
+}

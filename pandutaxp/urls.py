@@ -8,12 +8,16 @@ from accounts import views as account_views
 from accounts.views import CustomLoginView
 from apps.core.views import about_view
 from core.views import services_view  # Import the specific view
+from apps.core.views import contact_view 
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', core_views.home, name='home'),
     path('about/', about_view, name='about'),
     path('services/', services_view, name='services'),
+    path('contact/', contact_view, name='contact'),
+    path('', include('apps.core.urls')),
     
     # Client URLs
     path('clients/', include('apps.clients.urls')),

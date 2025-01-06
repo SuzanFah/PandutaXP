@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="contact-container">
+    <div class="contact-card">
+        <div class="card-header">
+            <div class="profile-img">
+                <img src="{% static 'images/profile.jpeg' %}" alt="Susie Fahim">
+            </div>
+            <h1>Let's Connect! ✨</h1>
+            <p class="title">Fullstack Developer</p>
+        </div>
+
+        <div class="contact-links">
+            <a href="mailto:susiefahim@gmail.com" class="contact-item email">
+                <i class="fas fa-envelope"></i>
+                <span>susiefahim@gmail.com</span>
+            </a>
+
+            <a href="tel:+201009259877" class="contact-item phone">
+                <i class="fas fa-phone-alt"></i>
+                <span>+20 100 925 9877</span>
+            </a>
+
+            <a href="https://github.com/suzanFah" target="_blank" class="contact-item github">
+                <i class="fab fa-github"></i>
+                <span>github.com/suzanFah</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/susiefahim" target="_blank" class="contact-item linkedin">
+                <i class="fab fa-linkedin"></i>
+                <span>linkedin.com/in/susiefahim</span>
+            </a>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send me a message 💌</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

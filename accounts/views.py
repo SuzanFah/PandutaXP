@@ -58,3 +58,6 @@ def about_view(request):
 
 def services_view(request):
     return render(request, 'core/services.html')
+
+def contact_view(request):
+    return render(request, 'core/contact.html')

@@ -1,7 +1,112 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+<link rel="stylesheet" href="{% static 'css/dark-override.css' %}">
+{% endblock %}
 
 {% block content %}
-<h1>Client Dashboard</h1>
-<p>Welcome {{ user.username }}!</p>
-<!-- Add your client dashboard content here -->
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="dashboard-sidebar">
+        <div class="user-profile">
+            <div class="user-avatar">
+                <img src="{% static 'images/profile.png' %}" alt="{{ user.username }}">
+            </div>
+            <h3>{{ user.get_full_name }}</h3>
+            <span class="user-role">Client</span>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#" class="active"><i class="fas fa-home"></i> Overview</a>
+            <a href="#"><i class="fas fa-tasks"></i> My Orders</a>
+            <a href="#"><i class="fas fa-clock"></i> Order History</a>
+            <a href="#"><i class="fas fa-star"></i> Reviews</a>
+            <a href="#"><i class="fas fa-cog"></i> Settings</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="dashboard-main">
+        <header class="dashboard-header">
+            <h1>Welcome back, {{ user.first_name }}! 👋</h1>
+            <div class="header-actions">
+                <button class="btn-notification"><i class="fas fa-bell"></i></button>
+                <button class="btn-primary">New Order</button>
+            </div>
+        </header>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon orders">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>Active Orders</h3>
+                    <p class="stat-number">{{ active_orders_count|default:0 }}</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon completed">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>Completed</h3>
+                    <p class="stat-number">{{ completed_orders_count|default:0 }}</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon spending">
+                    <i class="fas fa-dollar-sign"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>Total Spent</h3>
+                    <p class="stat-number">${{ total_spent|default:'0.00' }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Orders -->
+        <section class="recent-orders">
+            <div class="section-header">
+                <h2>Recent Orders</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="orders-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Service</th>
+                            <th>Provider</th>
+                            <th>Status</th>
+                            <th>Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in recent_orders %}
+                        <tr>
+                            <td>#{{ order.id }}</td>
+                            <td>{{ order.service }}</td>
+                            <td>{{ order.provider }}</td>
+                            <td><span class="status {{ order.status|lower }}">{{ order.status }}</span></td>
+                            <td>${{ order.amount }}</td>
+                            <td><a href="#" class="btn-view">View Details</a></td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="6" class="no-orders">No orders yet</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</div>
 {% endblock %}
