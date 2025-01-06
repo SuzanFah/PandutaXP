@@ -308,3 +308,133 @@
     border-radius: 4px;
     transition: width 0.3s ease;
 }
+
+/* Purple Trendy About Page Styles */
+body {
+    background: linear-gradient(135deg, #8B5CF6, #6D28D9);
+    color: white;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.about-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.story-content {
+    line-height: 1.8;
+}
+
+.story-content h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    background: linear-gradient(to right, #F0ABFC, #E879F9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.story-content h2 {
+    color: #F0ABFC;
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.story-content p {
+    color: #E2E8F0;
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Hover effects */
+.story-content h2:hover {
+    transform: translateX(10px);
+    transition: transform 0.3s ease;
+}
+
+/* Emoji animations */
+.story-content h1 span, 
+.story-content h2 span {
+    display: inline-block;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+
+.interface-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin: 4rem 0;
+}
+
+.interface-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.interface-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.feature h3 {
+    color: #F0ABFC;
+    margin-bottom: 1rem;
+}
+
+.feature p {
+    color: #E2E8F0;
+    line-height: 1.6;
+}
+
+.cta-section {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}

@@ -36,3 +36,63 @@
     transform: translateY(-2px);
     box-shadow: 0 6px 8px rgba(0,0,0,0.2);
 }
+
+/* Services Page Styles */
+.interface-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin: 4rem 0;
+}
+
+.interface-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    transition: transform 0.3s ease;
+}
+
+.interface-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature {
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.feature h3 {
+    color: #F0ABFC;
+    margin-bottom: 1rem;
+}
+
+.feature p {
+    color: #E2E8F0;
+    line-height: 1.6;
+}
+
+.cta-section {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}

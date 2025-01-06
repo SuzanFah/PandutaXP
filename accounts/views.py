@@ -52,3 +52,9 @@ def login_view(request):
             login(request, user)
             return redirect('providers_dashboard' if hasattr(user, 'provider') else 'clients_dashboard')
     return render(request, 'registration/login.html')
+
+def about_view(request):
+    return render(request, 'about.html')
+
+def services_view(request):
+    return render(request, 'core/services.html')

@@ -64,3 +64,17 @@ PandutaXP stands out with its trendy, user-friendly design 🎨, efficient dual-
 
 ## Architecture
 [Include system architecture diagram]
+
+## 🎨 UI Components
+
+### Interactive Washing Machine Animation
+We've implemented a sleek animated washing machine component using pure CSS animations. Features include:
+- Realistic spinning drum animation
+- Blinking LED status indicator  
+- Floating bubble effects
+- Responsive control panel design
+- Dynamic loading states
+
+The washing machine serves as both a functional status indicator and engaging visual element, enhancing the user experience when tracking laundry orders. Check out the live animation in the order tracking interface!
+
+---

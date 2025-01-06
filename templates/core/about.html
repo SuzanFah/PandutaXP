@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'images/logo.png' %}" alt="PandutaXP" height="40">
+        </a>
+        
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+            <a class="nav-link" href="#services">Services</a>
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#contact">Contact</a>
+            {% if user.is_authenticated %}
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-link btn btn-primary ms-2" href="{% url 'register' %}">Sign Up</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
+{% block content %}
+<div class="hero">
+    <div class="about-section">
+        <h1>✨Our Story: The Birth of Panduta 🚀</h1>
+        <div class="story-content">
+            <p>Panduta was born from a simple yet powerful idea: to make life easier, one clean garment at a time. 🧺✨</p>
+
+            <h2>The Beginning</h2>
+            <p>Our journey started with a simple idea...</p>
+
+            <h2>Our Mission</h2>
+            <p>We set out to revolutionize the laundry industry...</p>
+
+            <h2>A Wrinkle in Time ⏳</h2>
+            <p>It all started with Susie, a passionate fullstack engineering student at ALX Africa. 👩‍💻 Juggling her intensive studies, personal life, and household chores, Susie found herself constantly struggling with the never-ending pile of laundry. 😓 One hectic day, as she rushed to pick up her dry cleaning before closing time, she thought, "There has to be a better way." 💡</p>
+
+            <h2>Weaving a Solution 🕸️</h2>
+            <p>Inspired by her coursework at ALX Africa, Susie envisioned a platform that could connect people with the best laundry and dry cleaning services in their area. 🌟 She dreamed of a service that would consider not just location, but also price, quality, and expertise in handling different types of fabrics. And thus, the idea of Panduta was born. 🎉</p>
+
+            <h2>Stitching It All Together 🧵</h2>
+            <p>Leveraging the skills she was acquiring in her fullstack engineering course, Susie set out to turn her vision into reality. 💪 She dedicated her free time to developing Panduta, applying her newfound knowledge in web development, databases, and user experience design. 🖥️</p>
+
+            <h2>Ironing Out the Details 👕</h2>
+            <p>As part of her project, Susie reached out to laundry and dry cleaning providers across the city, big and small. 🏙️ She listened to their stories, understood their specialties, and brought them onto her platform. At the same time, she talked to countless individuals about their laundry woes and what they looked for in a cleaning service. 🗣️👂</p>
+
+            <h2>A Fresh Start 🌟</h2>
+            <p>In 2024, as Susie's fullstack engineering course at ALX Africa was nearing its end, Panduta's testing website launched. 🚀 By the official launch It will offer a seamless way for people to find, compare, and book laundry services. Whether it's a delicate silk blouse, a bulky comforter, or everyday wear, Panduta aim to ensure that every piece of fabric finds its perfect match in terms of care and cleaning. 👚👕👖</p>
+
+            <h2>Hanging Out the Future 🌈</h2>
+            <p>Dreaming of the day Panduta will thrive to grow, driven by Susie's passion for technology and making daily tasks easier. 📈 It's more than just a laundry platform; it's a testament to the power of education and innovation. As Susie continues to expand Panduta's features and reach, her mission remains the same: to give people more time for the things that truly matter in life. ⏰❤️</p>
+
+            <p>At Panduta, we believe that everyone deserves to feel fresh and confident every day, without the stress of laundry weighing them down. Join us in our journey to make the world a cleaner, easier place, one load at a time. 🌍🧼</p>
+
+            <h2>Launch Day</h2>
+            <p>We'll officially launch Panduta in 2024 Q4, marking the beginning of a new era in laundry services.</p>
+
+            <h2>Join Our Journey</h2>
+            <p>© 2024 Panduta. All rights reserved.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

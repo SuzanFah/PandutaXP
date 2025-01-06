@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="hero">
+    <div class="services-section">
+        <h1>✨ Choose Your Panduta Experience 🧺</h1>
+        
+        <div class="comparison-grid">
+            <!-- Client Side -->
+            <div class="comparison-card client-side">
+                <div class="card-header">
+                    <h2>Client Features 👕</h2>
+                    <p class="price">Free to Join!</p>
+                </div>
+                <ul class="feature-list">
+                    <li>
+                        <span class="emoji">📱</span>
+                        <h3>Easy Booking</h3>
+                        <p>Schedule pickups with just a few taps</p>
+                    </li>
+                    <li>
+                        <span class="emoji">🔍</span>
+                        <h3>Real-time Tracking</h3>
+                        <p>Follow your laundry's journey</p>
+                    </li>
+                    <li>
+                        <span class="emoji">⏰</span>
+                        <h3>Flexible Scheduling</h3>
+                        <p>Pick convenient time slots</p>
+                    </li>
+                    <li>
+                        <span class="emoji">📋</span>
+                        <h3>Service History</h3>
+                        <p>Track all your orders</p>
+                    </li>
+                </ul>
+                <a href="{% url 'register' %}?type=client" class="cta-button">Join as Client</a>
+            </div>
+
+            <!-- Provider Side -->
+            <div class="comparison-card provider-side">
+                <div class="card-header">
+                    <h2>Provider Features 🏪</h2>
+                    <p class="price">Business Dashboard</p>
+                </div>
+                <ul class="feature-list">
+                    <li>
+                        <span class="emoji">📊</span>
+                        <h3>Business Analytics</h3>
+                        <p>Track earnings and growth</p>
+                    </li>
+                    <li>
+                        <span class="emoji">📦</span>
+                        <h3>Order Management</h3>
+                        <p>Efficient operations control</p>
+                    </li>
+                    <li>
+                        <span class="emoji">⚙️</span>
+                        <h3>Service Customization</h3>
+                        <p>Set your prices and areas</p>
+                    </li>
+                    <li>
+                        <span class="emoji">📈</span>
+                        <h3>Customer Insights</h3>
+                        <p>Performance metrics</p>
+                    </li>
+                </ul>
+                <a href="{% url 'register' %}?type=provider" class="cta-button">Become Provider</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
