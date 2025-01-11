@@ -17,19 +17,21 @@ class ClientDashboardTest(TestCase):
         )
 
     def test_dashboard_access(self):
-        # Test direct dashboard access
         self.test_client.login(username='testclient', password='testpass123')
         response = self.test_client.get(reverse('client_dashboard'))
         self.assertEqual(response.status_code, 200)
 
     def test_dashboard_content(self):
-        # Test dashboard displays correct user info
         self.test_client.login(username='testclient', password='testpass123')
         response = self.test_client.get(reverse('client_dashboard'))
         self.assertContains(response, 'testclient')
 
-# Add more functionality tests
-def test_order_creation(self):
-    # Implement order placement
-    # Add service selection
-    # Implement pricing calculation
+    def test_order_creation(self):
+        self.test_client.login(username='testclient', password='testpass123')
+        order_data = {
+            'service_type': 'wash_and_fold',
+            'items': {'shirts': 2, 'pants': 3},
+            'pickup_time': '2024-01-15T10:00:00Z'
+        }
+        response = self.test_client.post(reverse('create_order'), order_data)
+        self.assertEqual(response.status_code, 201)        self.assertEqual(response.status_code, 201)        self.assertEqual(response.status_code, 201)
