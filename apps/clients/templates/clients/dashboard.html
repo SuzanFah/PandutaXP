@@ -1,54 +1,71 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="client-dashboard">
-    <h2>Welcome, {{ client.user.username }}!</h2>
-    
-    <!-- Search Filters -->
-    <div class="search-filters">
-        <form method="GET" class="filter-form">
-            <div class="filter-group">
-                <input type="text" name="location" placeholder="Search by location">
-                <select name="fabric">
-                    <option value="">Select Fabric Type</option>
-                    <option value="cotton">Cotton</option>
-                    <option value="silk">Silk</option>
-                    <option value="wool">Wool</option>
-                    <option value="delicate">Delicate</option>
+<div class="dashboard-container">
+    <h1>Welcome, {{ user.username }}!</h1>
+
+    <!-- Search Section -->
+    <div class="search-section">
+        <h2>Find a Provider</h2>
+        <form method="GET" class="search-form">
+            <div class="search-controls">
+                <input 
+                    type="text" 
+                    name="search" 
+                    value="{{ search_query }}" 
+                    placeholder="Search by provider name or service..."
+                    class="search-input"
+                >
+                
+                <select name="service_type" class="service-select">
+                    <option value="">All Services</option>
+                    {% for service in service_types %}
+                        <option value="{{ service }}" 
+                            {% if service == selected_service_type %}selected{% endif %}>
+                            {{ service }}
+                        </option>
+                    {% endfor %}
                 </select>
-                <select name="price">
-                    <option value="">Price Range</option>
-                    <option value="low">$0-$20</option>
-                    <option value="medium">$21-$50</option>
-                    <option value="high">$51+</option>
-                </select>
-                <button type="submit">Search</button>
+                
+                <button type="submit" class="search-button">Search</button>
             </div>
         </form>
+
+        <!-- Search Results -->
+        <div class="search-results">
+            {% if providers %}
+                {% for provider in providers %}
+                    <div class="provider-card">
+                        <h3>{{ provider.user.username }}</h3>
+                        <p>Service: {{ provider.service_type }}</p>
+                        <p>Location: {{ provider.address }}</p>
+                        <p>Contact: {{ provider.phone }}</p>
+                        <a href="{% url 'clients:book_service' provider.id %}" 
+                           class="book-button">
+                            Book Service
+                        </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="no-results">No providers found matching your search.</p>
+            {% endif %}
+        </div>
     </div>
 
-    <!-- Providers List -->
-    <div class="providers-list">
-        {% for provider in providers %}
-        <div class="provider-card">
-            <h3>{{ provider.user.username }}</h3>
-            <p>Location: {{ provider.address }}</p>
-            <p>Services: {{ provider.service_type }}</p>
-            <button onclick="location.href='{% url 'clients_book_service' provider.id %}'">Book Now</button>
-        </div>
-        {% endfor %}
-    </div>
-
-    <!-- Active Orders -->
-    <div class="active-orders">
-        <h3>My Orders</h3>
-        {% for order in active_orders %}
-        <div class="order-card">
-            <p>Order #{{ order.id }}</p>
-            <p>Status: {{ order.status }}</p>
-            <p>Provider: {{ order.provider.user.username }}</p>
-        </div>
-        {% endfor %}
+    <!-- Orders Section -->
+    <div class="orders-section">
+        <h2>Your Orders</h2>
+        {% if orders %}
+            {% for order in orders %}
+                <div class="order-card">
+                    <p>Order #{{ order.id }}</p>
+                    <p>Service: {{ order.service_type }}</p>
+                    <p>Date: {{ order.created_at|date }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No orders yet.</p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="orders-container">
+    <h2>My Orders</h2>
+    
+    {% if orders %}
+        <div class="orders-list">
+            {% for order in orders %}
+                <div class="order-card">
+                    <h3>Service: {{ order.service_type }}</h3>
+                    <p>Ordered on: {{ order.created_at }}</p>
+                    <p>Pickup time: {{ order.pickup_time }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No orders found.</p>
+    {% endif %}
+</div>
+{% endblock %}
