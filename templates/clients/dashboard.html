@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
+<img src="{% static 'images/pandutadefault.png' %}" alt="Profile">
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 <link rel="stylesheet" href="{% static 'css/dark-override.css' %}">
@@ -12,18 +13,16 @@
     <div class="dashboard-sidebar">
         <div class="user-profile">
             <div class="user-avatar">
-                <img src="{% static 'images/profile.png' %}" alt="{{ user.username }}">
+                <img src="{% static 'images/pandutadefault.png' %}" alt="{{ user.username }}">
             </div>
             <h3>{{ user.get_full_name }}</h3>
             <span class="user-role">Client</span>
         </div>
-        
+       
         <nav class="sidebar-nav">
-            <a href="#" class="active"><i class="fas fa-home"></i> Overview</a>
-            <a href="#"><i class="fas fa-tasks"></i> My Orders</a>
-            <a href="#"><i class="fas fa-clock"></i> Order History</a>
-            <a href="#"><i class="fas fa-star"></i> Reviews</a>
-            <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            <a href="{% url 'clients:dashboard' %}" class="active"><i class="fas fa-home"></i> Overview</a>
+            <a href="{% url 'clients:track_order' %}"><i class="fas fa-tasks"></i> My Orders</a>
+            <a href="{% url 'clients:book_service' %}"><i class="fas fa-plus"></i> New Order</a>
         </nav>
     </div>
 
@@ -105,6 +104,20 @@
                         {% endfor %}
                     </tbody>
                 </table>
+            </div>
+        </section>
+
+        <!-- Provider Search -->
+        <section class="provider-search">
+            <div class="section-header">
+                <h2>Find Providers</h2>
+            </div>
+            <div class="search-container">
+                <input type="text" id="provider-search" placeholder="Search for providers...">
+                <button onclick="searchProviders()" class="btn-primary">
+                    <i class="fas fa-search"></i> Search
+                </button>
+                <div id="search-results" class="provider-grid"></div>
             </div>
         </section>
     </div>
