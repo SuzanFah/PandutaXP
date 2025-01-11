@@ -1,0 +1,29 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    environment:
+      - DEBUG=True
+      - SECRET_KEY=your-secret-key
+      - DB_NAME=pandutaxp
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_HOST=db
+      - DB_PORT=5432
+
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=pandutaxp
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+volumes:
+  postgres_data:
