@@ -10,7 +10,6 @@ from apps.core.views import about_view
 from core.views import services_view  # Import the specific view
 from apps.core.views import contact_view 
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', core_views.home, name='home'),
@@ -22,6 +21,7 @@ urlpatterns = [
     # Client URLs
     path('clients/', include('apps.clients.urls')),
     path('clients/dashboard/', client_dashboard, name='clients_dashboard'),
+
     # Provider URLs
     path('providers/', include('apps.providers.urls', namespace='providers')),
     path('providers/dashboard/', provider_dashboard, name='providers_dashboard'),
@@ -29,9 +29,11 @@ urlpatterns = [
 
     # Single authentication entry point
     path('accounts/login/', CustomLoginView.as_view(), name='login'),
-   
+
     # Authentication URLs
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('register/', account_views.register_view, name='register'),
 ]
+
+    

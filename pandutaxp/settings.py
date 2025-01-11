@@ -22,13 +22,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.core',
+    'rest_framework',
+    'corsheaders',
     'apps.clients',
     'apps.providers',
-    'accounts',
-    'orders',
-    'payments',
+    'apps.service_orders',
 ]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
