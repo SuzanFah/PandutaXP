@@ -1,0 +1,5 @@
+POST /api/orders/update-status/
+{
+    "order_id": "integer",
+    "status": "accepted|in_progress|completed"
+}
