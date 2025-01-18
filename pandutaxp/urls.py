@@ -9,6 +9,11 @@ from accounts.views import CustomLoginView
 from apps.core.views import about_view
 from core.views import services_view  # Import the specific view
 from apps.core.views import contact_view 
+from django.http import HttpResponse
+
+
+def health_check(request):
+    return HttpResponse("OK")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,6 +39,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('register/', account_views.register_view, name='register'),
-]
-
     
+    path('health/', health_check, name='health_check'),
+]
