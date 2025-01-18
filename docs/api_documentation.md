@@ -16,3 +16,6 @@ POST /api/orders/update-status/
 ## Service Management
 GET /api/services/
 POST /api/services/add/
+POST /api/auth/login
+POST /api/services/create
+GET /api/providers/services
