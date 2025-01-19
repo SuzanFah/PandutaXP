@@ -128,3 +128,16 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'susiefahim@gmail.com'
 EMAIL_HOST_PASSWORD = 'bmla lnnh abct maji'
 
+
+# Security Settings
+CSRF_TRUSTED_ORIGINS = [
+    'https://pandutaxp-production.up.railway.app',
+    'https://*.railway.app'
+]
+
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_DOMAIN = 'pandutaxp-production.up.railway.app'
+
+# Session Settings
+SESSION_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
