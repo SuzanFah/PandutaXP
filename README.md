@@ -55,6 +55,15 @@ PandutaXP stands out with its trendy, user-friendly design 🎨, efficient dual-
 - POST /api/orders/update-status/
 - POST /api/orders/create/
 - GET /orders/{order_id}
+- Check Full In API_Documentation.md
+
+## 🚀 Getting Started
+Experience PandutaXP's provider features with these demo credentials:
+
+### Provider Demo Account
+```bash
+Username: susszlaundry
+Password: 44556611SSs
 
 ## Setup Instructions
 1. Environment Setup
@@ -68,7 +77,7 @@ PandutaXP stands out with its trendy, user-friendly design 🎨, efficient dual-
 ## 🎨 UI Components
 
 ### Interactive Washing Machine Animation
-We've implemented a sleek animated washing machine component using pure CSS animations. Features include:
+I've implemented a sleek animated washing machine component using pure CSS animations. Features include:
 - Realistic spinning drum animation
 - Blinking LED status indicator  
 - Floating bubble effects
