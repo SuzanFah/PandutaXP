@@ -11,7 +11,12 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-d=6uc*ptyn=zn$
 DEBUG = True
 
 # Keep localhost in allowed hosts for development
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'pandutaxp-production.up.railway.app' ]
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'pandutaxp.onrender.com',
+    'pandutaxp-production.up.railway.app'
+]
 
 # Application definition
 
