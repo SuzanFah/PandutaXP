@@ -136,16 +136,13 @@ EMAIL_HOST_PASSWORD = 'bmla lnnh abct maji'
 
 # Security Settings
 CSRF_TRUSTED_ORIGINS = [
-    'https://pandutaxp-production.up.railway.app',
-    'https://*.railway.app',
-    'https://pandutaxp.onrender.com',  # Add Render domain
-    'https://*.onrender.com',          # Add wildcard for Render subdomains
-    'http://localhost:8000',
-    'http://127.0.0.1:8000'
+    'https://pandutaxp.onrender.com',
+    'https://*.onrender.com'
 ]
 
-CSRF_COOKIE_SECURE = True
-CSRF_COOKIE_DOMAIN = 'pandutaxp-production.up.railway.app'
+# Comment out these during deployment troubleshooting
+# CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_DOMAIN = None  # Let Django handle this automatically
 
 # Session Settings
 SESSION_COOKIE_SECURE = True
