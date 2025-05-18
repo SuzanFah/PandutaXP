@@ -134,17 +134,17 @@ EMAIL_HOST_USER = 'susiefahim@gmail.com'
 EMAIL_HOST_PASSWORD = 'bmla lnnh abct maji'
 
 
-# Set DEBUG to False for production
-DEBUG = False
+# Set DEBUG temporarily to diagnose the issue
+DEBUG = True
 
-# Security Settings
+# Update security settings while maintaining functionality
 CSRF_TRUSTED_ORIGINS = [
     'https://pandutaxp.onrender.com',
     'https://*.onrender.com'
 ]
 
-# Session and Cookie Settings
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
+# Remove these constraints during troubleshooting
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
+SECURE_SSL_REDIRECT = False
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
