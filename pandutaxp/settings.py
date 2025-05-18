@@ -36,7 +36,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add this right after security middleware
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -134,16 +134,17 @@ EMAIL_HOST_USER = 'susiefahim@gmail.com'
 EMAIL_HOST_PASSWORD = 'bmla lnnh abct maji'
 
 
+# Set DEBUG to False for production
+DEBUG = False
+
 # Security Settings
 CSRF_TRUSTED_ORIGINS = [
     'https://pandutaxp.onrender.com',
     'https://*.onrender.com'
 ]
 
-# Comment out these during deployment troubleshooting
-# CSRF_COOKIE_SECURE = True
-# CSRF_COOKIE_DOMAIN = None  # Let Django handle this automatically
-
-# Session Settings
+# Session and Cookie Settings
 SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
