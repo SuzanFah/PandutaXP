@@ -137,7 +137,11 @@ EMAIL_HOST_PASSWORD = 'bmla lnnh abct maji'
 # Security Settings
 CSRF_TRUSTED_ORIGINS = [
     'https://pandutaxp-production.up.railway.app',
-    'https://*.railway.app'
+    'https://*.railway.app',
+    'https://pandutaxp.onrender.com',  # Add Render domain
+    'https://*.onrender.com',          # Add wildcard for Render subdomains
+    'http://localhost:8000',
+    'http://127.0.0.1:8000'
 ]
 
 CSRF_COOKIE_SECURE = True
