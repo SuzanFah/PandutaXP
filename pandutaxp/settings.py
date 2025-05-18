@@ -7,13 +7,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-d=6uc*ptyn=zn$#xop*&clr85v#qaiyi$at_b98kle^d4r38ub')
 
 
-# Development configuration
-DEBUG = True
+# Detect environment
+IS_PRODUCTION = os.environ.get('RENDER', False)
+
+# Adapt settings based on environment
+DEBUG = not IS_PRODUCTION
 
 # Keep localhost in allowed hosts for development
 ALLOWED_HOSTS = [
-    '127.0.0.1',
     'localhost',
+    '127.0.0.1',
     'pandutaxp.onrender.com',
 ]
 
@@ -33,6 +36,7 @@ INSTALLED_APPS = [
     'apps.service_orders',
 ]
 
+# Let the middleware handle security appropriately
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -41,7 +45,6 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'pandutaxp.urls'
