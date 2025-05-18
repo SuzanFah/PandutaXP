@@ -15,7 +15,6 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
     'pandutaxp.onrender.com',
-    'pandutaxp-production.up.railway.app'
 ]
 
 # Application definition
@@ -137,14 +136,13 @@ EMAIL_HOST_PASSWORD = 'bmla lnnh abct maji'
 # Set DEBUG temporarily to diagnose the issue
 DEBUG = True
 
-# Update security settings while maintaining functionality
+# Basic security settings that work
 CSRF_TRUSTED_ORIGINS = [
     'https://pandutaxp.onrender.com',
-    'https://*.onrender.com'
 ]
 
-# Remove these constraints during troubleshooting
-CSRF_COOKIE_SECURE = False
-SESSION_COOKIE_SECURE = False
-SECURE_SSL_REDIRECT = False
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# Remove all these settings for now
+# CSRF_COOKIE_SECURE = False
+# SESSION_COOKIE_SECURE = False
+# SECURE_SSL_REDIRECT = False
+# CSRF_COOKIE_DOMAIN = None
